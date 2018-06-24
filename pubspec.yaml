@@ -1,4 +1,4 @@
-name: irewards
+name: iRewards
 description: A rewards and recognition app for Windchimes-WiFi
 
 dependencies:
@@ -12,6 +12,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  http: "^0.11.3+16"
 
 
 # For information on the generic Dart part of this file, see the
@@ -55,3 +56,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+  assets:
+    - assets/images/launcher.png
+  fonts:
+    - family: ProductSans
+      fonts:
+        - asset: assets/fonts/Product-Sans-Italic.ttf
+        - asset: assets/fonts/Product-Sans-Regular.ttf
+          style: italic
