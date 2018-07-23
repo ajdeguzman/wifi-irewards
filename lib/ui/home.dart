@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../pages/profile_page.dart';
 import '../pages/search_page.dart';
 import '../pages/rewards_page.dart';
 import '../pages/login_page.dart';
@@ -20,42 +19,39 @@ class MainPageState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
+        backgroundColor: new Color(0xFF000000),
         title: new Text('iRewards'),
+        centerTitle: true,
+          actions: <Widget>[
+            // action button
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+               //
+              })]
+              
       ),
       body: PageView(
         children: <Widget>[
         //Home
         new Offstage(
           offstage: _page != 0,
-          child: new TickerMode(
-            enabled: _page == 0,
-            child: new Card(
-              child: new Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const ListTile(
-                    leading: const Icon(Icons.album),
-                    title: const Text('Deployment Dates'),
-                    subtitle: const Text('July 11, 2018'),
-                  ),
-                  new ButtonTheme.bar( // make buttons use the appropriate styles for cards
-                    child: new ButtonBar(
-                      children: <Widget>[
-                        new FlatButton(
-                          child: const Text('OPEN'),
-                          onPressed: () { /* ... */ },
-                        ),
-                        new FlatButton(
-                          child: const Text('DISMISS'),
-                          onPressed: () { /* ... */ },
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+          child: new ListView(
+          children: <Widget>[
+            ListTile(
+              title: Text('News 1'),
+              subtitle: Text('This is a subtitle 1')
             ),
-          ),
+            ListTile(
+              title: Text('News 2'),
+              subtitle: Text('This is a subtitle 2'),
+            ),
+            ListTile(
+              title: Text('News 3'),
+              subtitle: Text('This is a subtitle 3'),
+            ),
+          ],
+          )
         ),
         //Rewards
         new Offstage(
@@ -87,7 +83,7 @@ class MainPageState extends State<HomeScreen> {
       ),
 
       bottomNavigationBar: BottomNavigationBar(
-        fixedColor: Colors.lightBlue,
+        fixedColor: Colors.black,
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
